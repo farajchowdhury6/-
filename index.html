@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>শৈশবের দিনগুলো</title>
   <meta name="description" content="ফিরে দেখা শৈশবের সোনালি দিনগুলো, স্মৃতি, গল্প ও হারানো সময়।">
+  <title>শৈশবের দিনগুলো</title>
+
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -17,31 +18,31 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #fffaf0;
-      color: #34352c;
+      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      background: #f8f6f0;
+      color: #333;
       line-height: 1.8;
     }
 
     header {
-      background: #315b43;
+      background: linear-gradient(135deg, #174d37, #267653);
       color: white;
       text-align: center;
-      padding: 28px 15px;
+      padding: 45px 15px;
     }
 
     header h1 {
-      font-size: 30px;
-      margin-bottom: 5px;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 15px;
-      color: #f3e9c9;
+      font-size: 16px;
+      color: #e7f5eb;
     }
 
     nav {
-      background: #244632;
+      background: #123d2c;
       padding: 12px 8px;
       text-align: center;
       position: sticky;
@@ -50,394 +51,293 @@
     }
 
     nav a {
+      display: inline-block;
       color: white;
       text-decoration: none;
-      display: inline-block;
-      margin: 0 8px;
+      margin: 4px 10px;
       font-size: 14px;
     }
 
     nav a:hover {
-      color: #f3dca0;
+      color: #ffe39b;
     }
 
     .hero {
       padding: 45px 20px;
       text-align: center;
-      background: #f0e4c6;
+      background: #e8f1e6;
     }
 
     .hero h2 {
-      font-size: 27px;
-      color: #315b43;
-      margin-bottom: 12px;
+      color: #174d37;
+      font-size: 26px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      max-width: 550px;
+      max-width: 700px;
       margin: auto;
+      font-size: 16px;
     }
 
-    .section {
-      padding: 30px 18px;
-      max-width: 850px;
-      margin: auto;
-      scroll-margin-top: 65px;
+    .container {
+      width: 92%;
+      max-width: 1000px;
+      margin: 30px auto;
     }
 
-    .section h2 {
-      color: #315b43;
+    .section-title {
       text-align: center;
-      margin-bottom: 20px;
+      color: #174d37;
+      font-size: 25px;
+      margin-bottom: 25px;
     }
 
     .card {
       background: white;
-      padding: 20px;
-      margin-bottom: 16px;
+      padding: 24px;
       border-radius: 12px;
-      border: 1px solid #eee4d2;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
     }
 
     .card h3 {
-      color: #8b6035;
-      margin-bottom: 8px;
+      color: #267653;
+      font-size: 21px;
+      margin-bottom: 10px;
     }
 
-    .memory {
-      background: #e7efdf;
-      text-align: center;
-      padding: 28px 18px;
-      border-radius: 12px;
-    }
-
-    .memory p {
-      margin: 10px 0 18px;
-    }
-
-    .button,
-    button {
-      display: inline-block;
-      background: #315b43;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 7px;
-      text-decoration: none;
+    .card p {
       font-size: 15px;
-      cursor: pointer;
-      margin-top: 10px;
     }
 
-    button:hover,
-    .button:hover {
-      background: #244632;
-    }
-
-    .memory-form {
-      max-width: 600px;
-      margin: 20px auto;
-      text-align: left;
-    }
-
-    .memory-form label {
-      display: block;
-      margin: 12px 0 5px;
-      font-weight: bold;
-    }
-
-    .memory-form input,
-    .memory-form textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #cfc7b7;
-      border-radius: 8px;
-      font: inherit;
-      background: #fff;
-    }
-
-    .memory-form input:focus,
-    .memory-form textarea:focus {
-      outline: 2px solid #8eae94;
-      border-color: #315b43;
-    }
-
-    #memory-result {
-      margin-top: 24px;
-      text-align: center;
+    .memories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
     }
 
     .memory-card {
-      background: #fff8e9;
-      color: #403525;
-      border: 1px solid #eee4d2;
-      border-radius: 14px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .memory-card .picture {
+      height: 145px;
+      background: #dce9d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+    }
+
+    .memory-card .content {
       padding: 18px;
-      margin: 14px auto;
-      max-width: 600px;
-      text-align: left;
-      line-height: 1.8;
-      overflow-wrap: anywhere;
     }
 
     .memory-card h3 {
-      color: #315b43;
+      color: #174d37;
+      margin-bottom: 8px;
+    }
+
+    .quote {
+      background: #174d37;
+      color: white;
       text-align: center;
-      margin-bottom: 12px;
+      padding: 35px 20px;
+      border-radius: 12px;
+      font-size: 20px;
+      margin: 30px 0;
     }
 
-    .memory-card textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      border: 1px solid #cfc7b7;
-      border-radius: 8px;
-      font: inherit;
+    .contact {
+      text-align: center;
     }
 
-    .notice {
-      font-size: 13px;
-      color: #6b6255;
-      margin-top: 12px;
+    .contact a {
+      display: inline-block;
+      margin-top: 15px;
+      background: #267653;
+      color: white;
+      padding: 10px 22px;
+      text-decoration: none;
+      border-radius: 6px;
     }
 
     footer {
-      background: #244632;
+      background: #123d2c;
       color: white;
       text-align: center;
       padding: 22px 12px;
+      margin-top: 40px;
       font-size: 14px;
-      margin-top: 20px;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 600px) {
       header h1 {
-        font-size: 25px;
+        font-size: 27px;
       }
 
       .hero h2 {
         font-size: 23px;
       }
 
-      nav {
-        padding: 9px 4px;
+      .card {
+        padding: 18px;
       }
 
       nav a {
-        margin: 3px 5px;
-        font-size: 13px;
-      }
-
-      .section {
-        padding: 25px 14px;
-      }
-
-      .card {
-        padding: 16px;
+        margin: 4px 6px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <header>
     <h1>শৈশবের দিনগুলো</h1>
-    <p>ফিরে দেখা সেই সোনালি দিনগুলো</p>
+    <p>ফিরে দেখা সোনালি স্মৃতি, হারানো সময় ও মায়াভরা দিন</p>
   </header>
 
-  <nav aria-label="প্রধান নেভিগেশন">
-    <a href="#home">প্রচ্ছদ</a>
+  <nav>
+    <a href="#home">হোম</a>
     <a href="#memories">স্মৃতির পাতা</a>
-    <a href="#stories">গল্প</a>
-    <a href="#memory-finder">শৈশব খুঁজুন</a>
-    <a href="#share">স্মৃতি লিখুন</a>
+    <a href="#stories">শৈশবের গল্প</a>
+    <a href="#about">আমাদের কথা</a>
   </nav>
 
-  <main>
-    <section class="hero" id="home">
-      <h2>মনে আছে সেই দিনগুলো?</h2>
+  <section class="hero" id="home">
+    <h2>শৈশব কখনো পুরোনো হয় না</h2>
+    <p>
+      জীবনের সবচেয়ে সুন্দর সময়গুলোর নাম শৈশব।
+      সেই দুরন্তপনা, বন্ধুদের সঙ্গে খেলা, স্কুলের দিন,
+      বৃষ্টিতে ভেজা বিকেল আর পরিবারের মায়া আজও
+      আমাদের মনে নীরবে বেঁচে থাকে।
+      এই ওয়েবসাইট সেই মধুর স্মৃতিগুলোকে আবার
+      নতুন করে অনুভব করার একটি ছোট্ট প্রয়াস।
+    </p>
+  </section>
+
+  <main class="container">
+
+    <section id="memories">
+      <h2 class="section-title">স্মৃতির পাতায় শৈশব</h2>
+
+      <div class="memories">
+
+        <article class="memory-card">
+          <div class="picture">🌳</div>
+          <div class="content">
+            <h3>গ্রামের বিকেল</h3>
+            <p>
+              গাছের ছায়ায় বসে গল্প করা,
+              মাঠে দৌড়ানো আর বন্ধুদের সঙ্গে
+              কাটানো বিকেলগুলো ছিল অন্যরকম।
+            </p>
+          </div>
+        </article>
+
+        <article class="memory-card">
+          <div class="picture">⚽</div>
+          <div class="content">
+            <h3>বন্ধুদের সঙ্গে খেলা</h3>
+            <p>
+              মাঠের ফুটবল, লুকোচুরি আর
+              ছোট ছোট প্রতিযোগিতায় ভরা ছিল
+              আমাদের আনন্দময় শৈশব।
+            </p>
+          </div>
+        </article>
+
+        <article class="memory-card">
+          <div class="picture">🏫</div>
+          <div class="content">
+            <h3>স্কুলজীবন</h3>
+            <p>
+              বন্ধুদের সঙ্গে একই বেঞ্চে বসা,
+              টিফিন ভাগ করে খাওয়া আর
+              ছুটির ঘণ্টার অপেক্ষা।
+            </p>
+          </div>
+        </article>
+
+        <article class="memory-card">
+          <div class="picture">🌧️</div>
+          <div class="content">
+            <h3>বৃষ্টিভেজা দিন</h3>
+            <p>
+              বৃষ্টির পানিতে ভেজা, কাগজের নৌকা
+              ভাসানো আর জানালার পাশে বসে
+              বৃষ্টি দেখার আনন্দ।
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="stories" style="margin-top: 40px;">
+      <h2 class="section-title">শৈশবের গল্প</h2>
+
+      <article class="card">
+        <h3>হারিয়ে যাওয়া সেই বিকেল</h3>
+        <p>
+          একসময় বিকেল হলেই ঘরের বাইরে ছুটে যেতাম।
+          কখনো মাঠে খেলতাম, কখনো বন্ধুদের সঙ্গে
+          গাছতলায় বসে গল্প করতাম। সময়ের হিসাব
+          রাখার প্রয়োজন ছিল না। সূর্য ডুবে গেলে
+          বাড়ি ফেরার ডাক আসত। আজ সেই বিকেলগুলো
+          আর ফিরে আসে না, কিন্তু স্মৃতির ভেতরে
+          তারা ঠিক আগের মতোই রয়ে গেছে।
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>ছোট ছোট আনন্দ</h3>
+        <p>
+          ছোটবেলায় সামান্য কিছু পেলেই মন ভরে যেত।
+          নতুন খাতা, একটি কলম, ঈদের নতুন পোশাক
+          কিংবা বন্ধুদের সঙ্গে একটু বেশি সময় কাটানো।
+          তখন সুখের জন্য অনেক কিছু লাগত না।
+          বড় হওয়ার সঙ্গে সঙ্গে বুঝেছি, জীবনের
+          সবচেয়ে মূল্যবান আনন্দগুলো অনেক সময়
+          খুব সাধারণ মুহূর্তের মধ্যেই লুকিয়ে থাকে।
+        </p>
+      </article>
+    </section>
+
+    <section class="quote">
       <p>
-        মাঠভরা বিকেল, বন্ধুদের সঙ্গে খেলা,
-        স্কুলের ঘণ্টা আর মায়ের মমতা।
-        সময় চলে গেছে, কিন্তু শৈশবের স্মৃতিগুলো
-        আজও হৃদয়ের গভীরে রয়ে গেছে।
+        "শৈশব চলে যায় সময়ের স্রোতে,
+        কিন্তু তার স্মৃতি থেকে যায় হৃদয়ের গভীরে।"
       </p>
     </section>
 
-    <section class="section" id="memories">
-      <h2>আমাদের শৈশবের স্মৃতি</h2>
-
-      <div class="card">
-        <h3>⚽ মাঠভরা বিকেল</h3>
-        <p>বিকেল হলেই বন্ধুদের সঙ্গে মাঠে ছুটে যাওয়া, ফুটবল খেলা আর সূর্য ডোবার আগে বাড়ি ফেরার সেই দিনগুলো কি মনে পড়ে?</p>
-      </div>
-
-      <div class="card">
-        <h3>🏫 স্কুলজীবনের দিন</h3>
-        <p>বন্ধুদের সঙ্গে একই বেঞ্চে বসা, টিফিন ভাগ করে খাওয়া আর ছুটির ঘণ্টার অপেক্ষায় থাকা। কত মধুর ছিল সেই সময়!</p>
-      </div>
-
-      <div class="card">
-        <h3>🌧️ বৃষ্টিভেজা শৈশব</h3>
-        <p>বৃষ্টিতে ভেজা, কাগজের নৌকা ভাসানো আর কাদামাটিতে খেলার আনন্দ। ছোট ছোট মুহূর্তগুলোই ছিল আমাদের বড় সুখ।</p>
-      </div>
-
-      <div class="card">
-        <h3>👵 দাদি-নানির গল্প</h3>
-        <p>রাতের বেলা পাশে বসে গল্প শোনা, রূপকথার রাজ্যে হারিয়ে যাওয়া আর গল্প শুনতে শুনতে ঘুমিয়ে পড়া।</p>
+    <section id="about">
+      <div class="card contact">
+        <h2 class="section-title">আমাদের কথা</h2>
+        <p>
+          শৈশবের দিনগুলো একটি স্মৃতিনির্ভর ওয়েবসাইট।
+          এখানে শৈশবের গল্প, অনুভূতি ও হারিয়ে যাওয়া
+          সময়ের কথা তুলে ধরার চেষ্টা করা হয়েছে।
+        </p>
+        <p>
+          তোমার শৈশবের কোনো সুন্দর স্মৃতি থাকলে
+          সেটিও এই স্মৃতির জগতে যুক্ত হতে পারে।
+        </p>
+        <a href="mailto:your-email@example.com">যোগাযোগ করো</a>
       </div>
     </section>
 
-    <section class="section" id="stories">
-      <div class="memory">
-        <h2>স্মৃতিগুলো কখনো পুরোনো হয় না</h2>
-        <p>কিছু সময় ফিরে আসে না, কিন্তু সেই সময়ের গল্পগুলো বেঁচে থাকে আমাদের মনে।</p>
-      </div>
-    </section>
-
-    <section class="section" id="memory-finder">
-      <div class="card">
-        <h2>ফিরে দেখি শৈশবের দিনগুলো</h2>
-        <p style="text-align:center">তোমার জন্মসাল লেখো, ফিরে যাও স্মৃতির পথে।</p>
-
-        <div class="memory-form">
-          <label for="birth-year">তোমার জন্মসাল</label>
-          <input
-            type="number"
-            id="birth-year"
-            placeholder="যেমন: 2004"
-            min="1900"
-            inputmode="numeric"
-          >
-          <button type="button" onclick="showMemories()">স্মৃতি খুঁজে দেখি</button>
-        </div>
-
-        <div id="memory-result" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section class="section" id="share">
-      <div class="card">
-        <h2>তোমার শৈশবের গল্প</h2>
-        <p>তোমারও কি এমন কোনো স্মৃতি আছে, যা মনে পড়লে মুখে হাসি ফুটে ওঠে?</p>
-        <p>নিচে তোমার স্মৃতি লিখে কপি করে নিজের কাছে সংরক্ষণ করতে পারো।</p>
-
-        <div class="memory-form">
-          <label for="share-memory">তোমার স্মৃতি লিখো</label>
-          <textarea id="share-memory" rows="5" placeholder="তোমার শৈশবের গল্প এখানে লেখো..."></textarea>
-          <button type="button" onclick="copyShareMemory()">স্মৃতি কপি করো</button>
-          <p class="notice">এই সংস্করণে লেখা ওয়েবসাইটের সার্ভারে জমা হয় না। কপি করে নিজের কাছে সংরক্ষণ করো।</p>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer>
-    <p>© <span id="current-year">2026</span> শৈশবের দিনগুলো</p>
-    <p>স্মৃতির পাতায় বেঁচে থাকুক সোনালি শৈশব।</p>
+    <p>© 2026 শৈশবের দিনগুলো। সর্বস্বত্ব সংরক্ষিত।</p>
+    <p>স্মৃতির পাতায় বেঁচে থাকুক শৈশব।</p>
   </footer>
 
-  <script>
-    document.getElementById("current-year").textContent = new Date().getFullYear();
-
-    function showMemories() {
-      const input = document.getElementById("birth-year");
-      const result = document.getElementById("memory-result");
-      const rawYear = input.value.trim();
-      const year = Number(rawYear);
-      const now = new Date().getFullYear();
-
-      if (!rawYear || !Number.isInteger(year) || year < 1900 || year > now) {
-        result.innerHTML = "<p>অনুগ্রহ করে ১৯০০ থেকে বর্তমান বছরের মধ্যে একটি সঠিক জন্মসাল লেখো।</p>";
-        return;
-      }
-
-      const start = year + 6;
-      const end = year + 12;
-      let era, games, entertainment, technology;
-
-      if (start < 2000) {
-        era = "নব্বইয়ের দশক ও তার আগের শৈশব";
-        games = "লুকোচুরি, গোল্লাছুট, কানামাছি, দাড়িয়াবান্ধা ও মাঠের খেলাধুলা";
-        entertainment = "টেলিভিশনের অনুষ্ঠান, রূপকথার গল্প, রেডিও ও পরিবারের সঙ্গে সময়";
-        technology = "অনেকের শৈশবে রেডিও, ক্যাসেট ও টেলিভিশন ছিল পরিচিত বিনোদনের মাধ্যম";
-      } else if (start < 2010) {
-        era = "২০০০-এর দশকের শৈশব";
-        games = "ক্রিকেট, ফুটবল, লুকোচুরি, দাড়িয়াবান্ধা ও পাড়ার বন্ধুদের সঙ্গে খেলা";
-        entertainment = "টেলিভিশনের কার্টুন, শিশুতোষ অনুষ্ঠান, গল্পের বই ও ভিডিও গেম";
-        technology = "অনেক পরিবারে বাটন ফোন, সিডি-ডিভিডি ও কম্পিউটারের ব্যবহার বাড়ছিল";
-      } else if (start < 2020) {
-        era = "২০১০-এর দশকের শৈশব";
-        games = "মাঠের খেলাধুলা, স্কুলের বন্ধুদের সঙ্গে আড্ডা এবং মোবাইল গেম";
-        entertainment = "টেলিভিশনের কার্টুন, ইউটিউবের ভিডিও ও অনলাইন বিনোদন";
-        technology = "স্মার্টফোন ও ইন্টারনেট ধীরে ধীরে আরও পরিচিত হয়ে ওঠে";
-      } else {
-        era = "২০২০-এর দশকের শৈশব";
-        games = "মাঠের খেলা, ঘরের খেলনা, বোর্ড গেম ও ডিজিটাল গেম";
-        entertainment = "অনলাইন ভিডিও, কার্টুন, শিশুতোষ অনুষ্ঠান ও ডিজিটাল গল্প";
-        technology = "স্মার্টফোন, ইন্টারনেট ও ডিজিটাল শিক্ষার ব্যবহার অনেক শিশুর জীবনের অংশ";
-      }
-
-      result.innerHTML = `
-        <div class="memory-card">
-          <h3>🌿 তোমার শৈশবের স্মৃতির পাতা</h3>
-          <p><strong>জন্মসাল:</strong> ${year}</p>
-          <p><strong>বর্তমান বছর অনুযায়ী আনুমানিক বয়স:</strong> ${now - year} বছর</p>
-          <p><strong>সম্ভাব্য শৈশবকাল:</strong> ${start}–${end}</p>
-          <p><strong>সময়ের পরিচয়:</strong> ${era}</p>
-        </div>
-        <div class="memory-card">
-          <h3>🎮 খেলাধুলা</h3>
-          <p>${games}</p>
-        </div>
-        <div class="memory-card">
-          <h3>📺 বিনোদন</h3>
-          <p>${entertainment}</p>
-        </div>
-        <div class="memory-card">
-          <h3>📱 প্রযুক্তির স্মৃতি</h3>
-          <p>${technology}</p>
-        </div>
-        <div class="memory-card">
-          <h3>💭 তোমার নিজের স্মৃতি</h3>
-          <p>তোমার প্রিয় খেলা, কার্টুন বা স্কুলের মজার ঘটনা এখানে লেখো।</p>
-          <textarea id="my-memory" rows="4" placeholder="তোমার শৈশবের স্মৃতি লেখো..."></textarea>
-          <button type="button" onclick="copyMemory()">স্মৃতি কপি করো</button>
-        </div>
-        <p class="notice">এগুলো সময়ভিত্তিক সাধারণ উদাহরণ; সবার শৈশব এক রকম ছিল না।</p>
-      `;
-
-      result.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    function copyTextFromField(fieldId) {
-      const field = document.getElementById(fieldId);
-
-      if (!field || !field.value.trim()) {
-        alert("আগে তোমার স্মৃতিটি লেখো।");
-        return;
-      }
-
-      field.focus();
-      field.select();
-      field.setSelectionRange(0, field.value.length);
-
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(field.value)
-          .then(() => alert("স্মৃতি কপি হয়েছে!"))
-          .catch(() => alert("লেখাটি নির্বাচন করা হয়েছে। কপি অপশন ব্যবহার করো।"));
-      } else {
-        alert("লেখাটি নির্বাচন করা হয়েছে। কপি অপশন ব্যবহার করো।");
-      }
-    }
-
-    function copyMemory() {
-      copyTextFromField("my-memory");
-    }
-
-    function copyShareMemory() {
-      copyTextFromField("share-memory");
-    }
-  </script>
 </body>
 </html>
