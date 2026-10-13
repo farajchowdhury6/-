@@ -1,343 +1,842 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ফিরে দেখা শৈশবের সোনালি দিনগুলো, স্মৃতি, গল্প ও হারানো সময়।">
-  <title>শৈশবের দিনগুলো</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10152f">
+<meta name="description" content="শৈশবের দিনগুলো: ১৯৯০ থেকে ২০২৫ সালের স্মৃতি, খেলা, কার্টুন ও শৈশবের টাইম মেশিন।">
+<title>শৈশবের দিনগুলো | টাইম মেশিন</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+  --bg: #0b1023;
+  --panel: #151d39;
+  --panel2: #1d294b;
+  --cyan: #59f2e0;
+  --pink: #ff72b6;
+  --yellow: #ffdc82;
+  --text: #f4f5ff;
+  --muted: #b3bdd9;
+  --border: #39496d;
+}
 
-    body {
-      font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background: #f8f6f0;
-      color: #333;
-      line-height: 1.8;
-    }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    header {
-      background: linear-gradient(135deg, #174d37, #267653);
-      color: white;
-      text-align: center;
-      padding: 45px 15px;
-    }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hind Siliguri", sans-serif;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
 
-    header p {
-      font-size: 16px;
-      color: #e7f5eb;
-    }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
 
-    nav {
-      background: #123d2c;
-      padding: 12px 8px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+.topbar {
+  background: #101731;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    nav a {
-      display: inline-block;
-      color: white;
-      text-decoration: none;
-      margin: 4px 10px;
-      font-size: 14px;
-    }
+.nav {
+  width: min(1180px, 94%);
+  min-height: 68px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
 
-    nav a:hover {
-      color: #ffe39b;
-    }
+.logo {
+  color: var(--cyan);
+  font-size: 22px;
+  font-weight: 700;
+  white-space: nowrap;
+}
 
-    .hero {
-      padding: 45px 20px;
-      text-align: center;
-      background: #e8f1e6;
-    }
+.navlinks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 17px;
+}
 
-    .hero h2 {
-      color: #174d37;
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
+.navlinks a {
+  font-size: 14px;
+  color: var(--muted);
+}
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 16px;
-    }
+.navlinks a:hover { color: var(--cyan); }
 
-    .container {
-      width: 92%;
-      max-width: 1000px;
-      margin: 30px auto;
-    }
+.hero {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 18px;
+  text-align: center;
+  position: relative;
+  background:
+    linear-gradient(180deg, #0b10232e, #0b1023ed),
+    url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1800&q=85") center/cover;
+}
 
-    .section-title {
-      text-align: center;
-      color: #174d37;
-      font-size: 25px;
-      margin-bottom: 25px;
-    }
+.hero-content { width: min(850px, 100%); }
 
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 22px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-    }
+.pill {
+  display: inline-block;
+  border: 1px solid #59f2e080;
+  background: #101b39d9;
+  color: var(--cyan);
+  border-radius: 30px;
+  padding: 5px 16px;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
 
-    .card h3 {
-      color: #267653;
-      font-size: 21px;
-      margin-bottom: 10px;
-    }
+.hero h1 {
+  font-size: clamp(37px, 7vw, 70px);
+  line-height: 1.3;
+  font-weight: 700;
+  text-shadow: 0 0 30px #59f2e050;
+}
 
-    .card p {
-      font-size: 15px;
-    }
+.hero h1 span { color: var(--cyan); }
 
-    .memories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
+.hero p {
+  max-width: 680px;
+  margin: 20px auto 26px;
+  font-size: 17px;
+  color: #f0f1ff;
+}
 
-    .memory-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-    }
+.btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 20px;
+  font-weight: 700;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition: transform .2s, filter .2s;
+}
 
-    .memory-card .picture {
-      height: 145px;
-      background: #dce9d9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 45px;
-    }
+.btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-    .memory-card .content {
-      padding: 18px;
-    }
+.btn-primary {
+  background: linear-gradient(120deg, var(--cyan), #a0ffe9);
+  color: #0b1830;
+}
 
-    .memory-card h3 {
-      color: #174d37;
-      margin-bottom: 8px;
-    }
+.btn-secondary {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
 
-    .quote {
-      background: #174d37;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-      border-radius: 12px;
-      font-size: 20px;
-      margin: 30px 0;
-    }
+.btn-pink {
+  background: linear-gradient(120deg, var(--pink), #ffb4d7);
+  color: #341128;
+}
 
-    .contact {
-      text-align: center;
-    }
+.hero .btn { margin: 4px; }
 
-    .contact a {
-      display: inline-block;
-      margin-top: 15px;
-      background: #267653;
-      color: white;
-      padding: 10px 22px;
-      text-decoration: none;
-      border-radius: 6px;
-    }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 720px;
+  margin: 38px auto 0;
+  background: #101831e8;
+  border: 1px solid #65739455;
+  border-radius: 14px;
+  padding: 17px 8px;
+}
 
-    footer {
-      background: #123d2c;
-      color: white;
-      text-align: center;
-      padding: 22px 12px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
+.stat strong {
+  display: block;
+  font-size: 25px;
+  color: var(--cyan);
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 27px;
-      }
+.stat span { font-size: 12px; color: var(--muted); }
 
-      .hero h2 {
-        font-size: 23px;
-      }
+.container { width: min(1120px, 92%); margin: auto; }
 
-      .card {
-        padding: 18px;
-      }
+.section { padding: 68px 0; }
 
-      nav a {
-        margin: 4px 6px;
-      }
-    }
-  </style>
+.section.alt { background: #10162c; }
+
+.section-head { text-align: center; margin-bottom: 32px; }
+
+.section-head .eyebrow {
+  color: var(--pink);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+.section-head h2 {
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.45;
+  margin: 7px 0;
+}
+
+.section-head p {
+  color: var(--muted);
+  max-width: 680px;
+  margin: auto;
+  font-size: 15px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.machine {
+  background:
+    radial-gradient(ellipse at top, #23335b 0%, #121a35 55%, #0e142b 100%);
+  border: 1px solid #53648c;
+  border-radius: 22px;
+  padding: clamp(20px, 4vw, 42px);
+  position: relative;
+  overflow: hidden;
+}
+
+.machine::before {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 1px solid #59f2e026;
+  top: -120px;
+  right: -50px;
+  box-shadow: 0 0 0 25px #59f2e00b, 0 0 0 50px #59f2e007;
+  pointer-events: none;
+}
+
+.machine-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.machine-label {
+  font-family: Orbitron, sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+}
+
+.status {
+  font-size: 12px;
+  color: var(--yellow);
+  background: #ffdc8217;
+  border: 1px solid #ffdc8244;
+  border-radius: 30px;
+  padding: 4px 12px;
+}
+
+.year-display {
+  text-align: center;
+  padding: 20px 0 25px;
+}
+
+.year-display small { color: var(--muted); }
+
+.big-year {
+  font-family: Orbitron, sans-serif;
+  color: var(--cyan);
+  font-size: clamp(58px, 13vw, 110px);
+  line-height: 1.3;
+  text-shadow: 0 0 30px #59f2e03d;
+  font-weight: 700;
+}
+
+.range-wrap { margin: 15px auto 25px; max-width: 700px; }
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--cyan);
+  cursor: pointer;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.year-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin: 20px 0;
+}
+
+.year-chip {
+  background: #1a2544;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 7px 13px;
+  border-radius: 7px;
+}
+
+.year-chip:hover, .year-chip.active {
+  color: var(--cyan);
+  border-color: var(--cyan);
+  background: #59f2e012;
+}
+
+.machine-actions { text-align: center; }
+
+.destination {
+  margin-top: 25px;
+  padding: 22px;
+  background: #0c142b;
+  border: 1px solid #43567b;
+  border-radius: 14px;
+}
+
+.destination h3 {
+  color: var(--yellow);
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.destination p { color: var(--muted); }
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.destination-item {
+  background: var(--panel2);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.destination-item .emoji { font-size: 27px; }
+
+.destination-item h4 { margin: 5px 0; }
+
+.destination-item p { font-size: 13px; color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  border-radius: 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform .2s, border-color .2s;
+}
+
+.card:hover { transform: translateY(-4px); border-color: var(--cyan); }
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: var(--panel2);
+}
+
+.card-content { padding: 18px; }
+
+.tag {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card h3 { font-size: 21px; margin: 6px 0; }
+
+.card p { color: var(--muted); font-size: 14px; }
+
+.card .btn { margin-top: 13px; width: 100%; }
+
+.game-symbol {
+  height: 190px;
+  background: linear-gradient(135deg, #233b5a, #48294c);
+  display: grid;
+  place-items: center;
+  font-size: 76px;
+}
+
+.gallery-note {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 23px;
+  font-size: 13px;
+}
+
+.filter-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 14px;
+  border-radius: 25px;
+}
+
+.filter-btn.active {
+  background: var(--cyan);
+  color: #0b1830;
+  border-color: var(--cyan);
+}
+
+.quiz-box {
+  max-width: 800px;
+  margin: auto;
+  background: linear-gradient(145deg, #192342, #11172e);
+  border: 1px solid #485b82;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.quiz-top {
+  padding: 18px 23px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #202d50;
+}
+
+.quiz-top span { color: var(--cyan); font-weight: 600; }
+
+.progress {
+  height: 5px;
+  background: #080e20;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--cyan);
+  transition: width .3s;
+}
+
+.quiz-body { padding: clamp(20px, 5vw, 38px); }
+
+.quiz-category { color: var(--pink); font-size: 13px; }
+
+.question {
+  font-size: clamp(21px, 4vw, 28px);
+  line-height: 1.5;
+  margin: 10px 0 23px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.option {
+  text-align: left;
+  background: #1b2645;
+  border: 1px solid #405176;
+  color: var(--text);
+  border-radius: 10px;
+  padding: 13px 14px;
+  min-height: 56px;
+}
+
+.option:hover:not(:disabled) { border-color: var(--cyan); }
+
+.option.correct {
+  background: #124b3c;
+  border-color: #54edb2;
+}
+
+.option.wrong {
+  background: #54243a;
+  border-color: #ff729f;
+}
+
+.option:disabled { cursor: default; }
+
+.quiz-feedback {
+  margin-top: 17px;
+  min-height: 30px;
+  color: var(--yellow);
+}
+
+.quiz-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.quiz-result { text-align: center; padding: 15px 0; }
+
+.result-score {
+  font-family: Orbitron, sans-serif;
+  color: var(--cyan);
+  font-size: 60px;
+  margin: 15px 0;
+}
+
+.memory-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.field.full { grid-column: 1 / -1; }
+
+.field label { font-size: 14px; color: #dce4fa; }
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: #0c142b;
+  color: var(--text);
+  border: 1px solid #435579;
+  border-radius: 8px;
+  padding: 11px 12px;
+  outline: none;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--cyan);
+}
+
+.field textarea { min-height: 150px; resize: vertical; }
+
+.help {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.form-message { margin-top: 12px; color: var(--yellow); font-size: 14px; }
+
+.privacy-note {
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 10px;
+  background: #202c4b;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.memory-example {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px dashed #50638b;
+  border-radius: 12px;
+  background: #0f1730;
+}
+
+.memory-example h3 { color: var(--yellow); margin-bottom: 8px; }
+
+.memory-example p { color: var(--muted); font-size: 14px; }
+
+.contact {
+  text-align: center;
+  background: linear-gradient(135deg, #1a2948, #211a42);
+  border: 1px solid #4c527f;
+  padding: 42px 20px;
+  border-radius: 18px;
+}
+
+.contact h2 { font-size: clamp(26px, 4vw, 37px); }
+
+.contact p { color: var(--muted); margin: 12px auto 22px; max-width: 580px; }
+
+footer {
+  background: #070b18;
+  border-top: 1px solid var(--border);
+  padding: 28px 15px;
+  text-align: center;
+}
+
+.footer-logo { color: var(--cyan); font-size: 23px; font-weight: 700; }
+
+footer p { color: var(--muted); font-size: 13px; }
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e2fff7;
+  color: #0c3029;
+  border-radius: 10px;
+  padding: 12px 18px;
+  box-shadow: 0 5px 25px #0005;
+  z-index: 300;
+  width: max-content;
+  max-width: 90%;
+  display: none;
+  font-weight: 600;
+}
+
+.toast.show { display: block; }
+
+@media (max-width: 850px) {
+  .nav { flex-direction: column; padding: 10px 0; }
+  .navlinks { justify-content: center; gap: 8px 15px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .memory-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .hero { min-height: 530px; }
+  .hero p { font-size: 15px; }
+  .section { padding: 48px 0; }
+  .grid { grid-template-columns: 1fr; }
+  .destination-grid { grid-template-columns: 1fr; }
+  .options { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .field.full { grid-column: auto; }
+  .card img, .game-symbol { height: 215px; }
+  .logo { font-size: 20px; }
+  .navlinks a { font-size: 13px; }
+  .panel { padding: 17px; }
+  .stats { gap: 5px; }
+  .stat strong { font-size: 21px; }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>শৈশবের দিনগুলো</h1>
-    <p>ফিরে দেখা সোনালি স্মৃতি, হারানো সময় ও মায়াভরা দিন</p>
-  </header>
-
-  <nav>
-    <a href="#home">হোম</a>
-    <a href="#memories">স্মৃতির পাতা</a>
-    <a href="#stories">শৈশবের গল্প</a>
-    <a href="#about">আমাদের কথা</a>
+<header class="topbar">
+  <nav class="nav">
+    <a class="logo" href="#home">◈ শৈশবের দিনগুলো</a>
+    <div class="navlinks">
+      <a href="#timemachine">টাইম মেশিন</a>
+      <a href="#games">খেলার জগৎ</a>
+      <a href="#quiz">কুইজ</a>
+      <a href="#memories">স্মৃতি জমা</a>
+      <a href="#contact">যোগাযোগ করো</a>
+    </div>
   </nav>
+</header>
 
-  <section class="hero" id="home">
-    <h2>শৈশব কখনো পুরোনো হয় না</h2>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="pill">✦ তোমার স্মৃতির টাইম মেশিনে স্বাগতম ✦</span>
+    <h1>শৈশবের <span>দিনগুলো</span></h1>
     <p>
-      জীবনের সবচেয়ে সুন্দর সময়গুলোর নাম শৈশব।
-      সেই দুরন্তপনা, বন্ধুদের সঙ্গে খেলা, স্কুলের দিন,
-      বৃষ্টিতে ভেজা বিকেল আর পরিবারের মায়া আজও
-      আমাদের মনে নীরবে বেঁচে থাকে।
-      এই ওয়েবসাইট সেই মধুর স্মৃতিগুলোকে আবার
-      নতুন করে অনুভব করার একটি ছোট্ট প্রয়াস।
+      সময় চলে যায়, মানুষ বড় হয়, বদলে যায় চারপাশ।
+      শুধু শৈশবের কিছু মুহূর্ত হৃদয়ের ভেতর আজীবন একই রকম থেকে যায়।
+      চলো, আবার ফিরে যাই সেই চেনা দিনগুলোতে!
     </p>
-  </section>
+    <a class="btn btn-primary" href="#timemachine">⏳ সময়ে ফিরে চলো</a>
+    <a class="btn btn-secondary" href="#quiz">🎮 কুইজ খেলো</a>
 
-  <main class="container">
+    <div class="stats">
+      <div class="stat"><strong>৩৫</strong><span>বছরের স্মৃতির পরিসর</span></div>
+      <div class="stat"><strong>৩০</strong><span>কুইজ প্রশ্ন</span></div>
+      <div class="stat"><strong>∞</strong><span>স্মৃতির গল্প</span></div>
+    </div>
+  </div>
+</section>
 
-    <section id="memories">
-      <h2 class="section-title">স্মৃতির পাতায় শৈশব</h2>
+<section class="section" id="timemachine">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">TIME TRAVEL EXPERIENCE</span>
+      <h2>⏳ তোমার টাইম মেশিন</h2>
+      <p>একটি সাল বেছে নাও। দেখো সেই সময়ের শৈশব কেমন ছিল!</p>
+    </div>
 
-      <div class="memories">
-
-        <article class="memory-card">
-          <div class="picture">🌳</div>
-          <div class="content">
-            <h3>গ্রামের বিকেল</h3>
-            <p>
-              গাছের ছায়ায় বসে গল্প করা,
-              মাঠে দৌড়ানো আর বন্ধুদের সঙ্গে
-              কাটানো বিকেলগুলো ছিল অন্যরকম।
-            </p>
-          </div>
-        </article>
-
-        <article class="memory-card">
-          <div class="picture">⚽</div>
-          <div class="content">
-            <h3>বন্ধুদের সঙ্গে খেলা</h3>
-            <p>
-              মাঠের ফুটবল, লুকোচুরি আর
-              ছোট ছোট প্রতিযোগিতায় ভরা ছিল
-              আমাদের আনন্দময় শৈশব।
-            </p>
-          </div>
-        </article>
-
-        <article class="memory-card">
-          <div class="picture">🏫</div>
-          <div class="content">
-            <h3>স্কুলজীবন</h3>
-            <p>
-              বন্ধুদের সঙ্গে একই বেঞ্চে বসা,
-              টিফিন ভাগ করে খাওয়া আর
-              ছুটির ঘণ্টার অপেক্ষা।
-            </p>
-          </div>
-        </article>
-
-        <article class="memory-card">
-          <div class="picture">🌧️</div>
-          <div class="content">
-            <h3>বৃষ্টিভেজা দিন</h3>
-            <p>
-              বৃষ্টির পানিতে ভেজা, কাগজের নৌকা
-              ভাসানো আর জানালার পাশে বসে
-              বৃষ্টি দেখার আনন্দ।
-            </p>
-          </div>
-        </article>
-
+    <div class="machine">
+      <div class="machine-top">
+        <span class="machine-label">CHILDHOOD TIME MACHINE</span>
+        <span class="status">● SYSTEM READY</span>
       </div>
-    </section>
 
-    <section id="stories" style="margin-top: 40px;">
-      <h2 class="section-title">শৈশবের গল্প</h2>
+      <div class="year-display">
+        <small>তুমি কোন বছরে ফিরে যেতে চাও?</small>
+        <div class="big-year" id="selectedYear">2005</div>
+      </div>
 
-      <article class="card">
-        <h3>হারিয়ে যাওয়া সেই বিকেল</h3>
-        <p>
-          একসময় বিকেল হলেই ঘরের বাইরে ছুটে যেতাম।
-          কখনো মাঠে খেলতাম, কখনো বন্ধুদের সঙ্গে
-          গাছতলায় বসে গল্প করতাম। সময়ের হিসাব
-          রাখার প্রয়োজন ছিল না। সূর্য ডুবে গেলে
-          বাড়ি ফেরার ডাক আসত। আজ সেই বিকেলগুলো
-          আর ফিরে আসে না, কিন্তু স্মৃতির ভেতরে
-          তারা ঠিক আগের মতোই রয়ে গেছে।
-        </p>
-      </article>
+      <div class="range-wrap">
+        <input id="yearSlider" type="range" min="1990" max="2025" value="2005" aria-label="সাল নির্বাচন">
+        <div class="range-labels"><span>১৯৯০</span><span>২০০০</span><span>২০১০</span><span>২০২০</span><span>২০২৫</span></div>
+      </div>
 
-      <article class="card">
-        <h3>ছোট ছোট আনন্দ</h3>
-        <p>
-          ছোটবেলায় সামান্য কিছু পেলেই মন ভরে যেত।
-          নতুন খাতা, একটি কলম, ঈদের নতুন পোশাক
-          কিংবা বন্ধুদের সঙ্গে একটু বেশি সময় কাটানো।
-          তখন সুখের জন্য অনেক কিছু লাগত না।
-          বড় হওয়ার সঙ্গে সঙ্গে বুঝেছি, জীবনের
-          সবচেয়ে মূল্যবান আনন্দগুলো অনেক সময়
-          খুব সাধারণ মুহূর্তের মধ্যেই লুকিয়ে থাকে।
-        </p>
-      </article>
-    </section>
+      <div class="year-buttons">
+        <button class="year-chip" data-year="1990">১৯৯০</button>
+        <button class="year-chip" data-year="1995">১৯৯৫</button>
+        <button class="year-chip" data-year="2000">২০০০</button>
+        <button class="year-chip active" data-year="2005">২০০৫</button>
+        <button class="year-chip" data-year="2010">২০১০</button>
+        <button class="year-chip" data-year="2015">২০১৫</button>
+        <button class="year-chip" data-year="2020">২০২০</button>
+        <button class="year-chip" data-year="2025">২০২৫</button>
+      </div>
 
-    <section class="quote">
+      <div class="machine-actions">
+        <button class="btn btn-primary" id="travelBtn">🚀 এই সময়ে নিয়ে চলো</button>
+      </div>
+
+      <div class="destination" id="destination" hidden>
+        <h3 id="destinationTitle"></h3>
+        <p id="destinationDesc"></p>
+        <div class="destination-grid" id="destinationGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="games">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">CHILDHOOD GAME ZONE</span>
+      <h2>🎮 শৈশবের খেলার জগৎ</h2>
+      <p>পুরোনো দিনের খেলাগুলো মনে আছে? পছন্দের বিভাগ বেছে ঘুরে দেখো।</p>
+    </div>
+
+    <div class="filter-row">
+      <button class="filter-btn active" data-filter="সব">সব খেলা</button>
+      <button class="filter-btn" data-filter="মাঠের খেলা">মাঠের খেলা</button>
+      <button class="filter-btn" data-filter="ঘরের খেলা">ঘরের খেলা</button>
+      <button class="filter-btn" data-filter="খেলনা">খেলনা</button>
+      <button class="filter-btn" data-filter="ডিজিটাল">ডিজিটাল</button>
+    </div>
+
+    <div class="grid" id="gameGrid"></div>
+    <p class="gallery-note">ছবিগুলো অনলাইন উৎস থেকে লোড হয়। সব ছবির লিংক সব সময় সচল থাকবে এমন নিশ্চয়তা নেই।</p>
+  </div>
+</section>
+
+<section class="section" id="popular">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">THROWBACK ZONE</span>
+      <h2>📺 কার্টুন, গান ও জনপ্রিয় স্মৃতি</h2>
+      <p>যে অনুষ্ঠান, চরিত্র, গান ও বিনোদন বিভিন্ন প্রজন্মের শৈশবের অংশ ছিল।</p>
+    </div>
+    <div class="grid" id="cultureGrid"></div>
+  </div>
+</section>
+
+<section class="section alt" id="quiz">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">CHILDHOOD CHALLENGE</span>
+      <h2>🧠 শৈশব স্মৃতি কুইজ</h2>
+      <p>৩০টি প্রশ্ন, প্রতিটিতে চারটি উত্তর। দেখি তোমার শৈশবের স্মৃতি কতটা শক্তিশালী!</p>
+    </div>
+
+    <div class="quiz-box">
+      <div class="quiz-top">
+        <span id="quizCounter">প্রশ্ন ১ / ৩০</span>
+        <span>⭐ স্কোর: <b id="score">০</b></span>
+      </div>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+      <div class="quiz-body" id="quizBody">
+        <span class="quiz-category" id="quizCategory">শৈশবের খেলা</span>
+        <h3 class="question" id="questionText"></h3>
+        <div class="options" id="options"></div>
+        <div class="quiz-feedback" id="feedback" aria-live="polite"></div>
+        <div class="quiz-footer">
+          <span id="answeredCount">উত্তর দিয়েছ: ০</span>
+          <button class="btn btn-primary" id="nextQuestion" disabled>পরের প্রশ্ন →</button>
+        </div>
+      </div>
+
+      <div class="quiz-body quiz-result" id="quizResult" hidden>
+        <div style="font-size:55px">🏆</div>
+        <h2>কুইজ সম্পন্ন!</h2>
+        <div class="result-score" id="finalScore">০/৩০</div>
+        <p id="resultMessage"></p>
+        <button class="btn btn-primary" id="restartQuiz" style="margin-top:22px">↻ আবার খেলো</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="memories">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">COMMUNITY MEMORY ARCHIVE</span>
+      <h2>💌 তোমার শৈশবের স্মৃতি জমা দাও</h2>
       <p>
-        "শৈশব চলে যায় সময়ের স্রোতে,
-        কিন্তু তার স্মৃতি থেকে যায় হৃদয়ের গভীরে।"
+        তোমার নাম, ছোটবেলার কোনো ঘটনা, সেই সময়ের সাল ও চাইলে ছবি পাঠাও।
+        পর্যালোচনার পর নির্বাচিত স্মৃতি ওয়েবসাইটে প্রকাশ করা হবে।
       </p>
-    </section>
+    </div>
 
-    <section id="about">
-      <div class="card contact">
-        <h2 class="section-title">আমাদের কথা</h2>
-        <p>
-          শৈশবের দিনগুলো একটি স্মৃতিনির্ভর ওয়েবসাইট।
-          এখানে শৈশবের গল্প, অনুভূতি ও হারিয়ে যাওয়া
-          সময়ের কথা তুলে ধরার চেষ্টা করা হয়েছে।
-        </p>
-        <p>
-          তোমার শৈশবের কোনো সুন্দর স্মৃতি থাকলে
-          সেটিও এই স্মৃতির জগতে যুক্ত হতে পারে।
-        </p>
-        <a href="mailto:your-email@example.com">যোগাযোগ করো</a>
-      </div>
-    </section>
+    <div class="memory-layout">
+      <div class="panel">
+        <form id="memoryForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="memoryName">তোমার নাম *</label>
+              <input id="memoryName" name="name" maxlength="70" required placeholder="যেমন: ফজলে রাব্বী">
+            </div>
 
-  </main>
+            <div class="field">
+              <label for="memoryYear">স্মৃতির সাল *</label>
+              <select id="memoryYear" name="year" required></select>
+            </div>
 
-  <footer>
-    <p>© 2026 শৈশবের দিনগুলো। সর্বস্বত্ব সংরক্ষিত।</p>
-    <p>স্মৃতির পাতায় বেঁচে থাকুক শৈশব।</p>
-  </footer>
+            <div class="field full">
+              <label for="memoryTitle">স্মৃতির শিরোনাম *</label>
+              <input id="memoryTitle" name="title" maxlength="120" required placeholder="যেমন: আমাদের পাড়ার মার্বেল খেলা">
+            </div>
 
-</body>
-</html>
+            <div class="field full">
+              <label for="memoryText">তোমার শৈশবের গল্প *</label>
+              <textarea id="memoryText" name="story" minlength="20" maxlength="3000" required placeholder="সেই দিনগুলো কেমন ছিল? কী খেলতে? বন্ধুদের নাম বা কোনো মজার ঘটনা লিখতে পারো।"></textarea>
+            </div>
+
+            <div class="field full">
+              <label for="memoryPhoto">ছবির লিংক (ঐচ্ছিক)</label>
+              <input id="memoryPhoto" name="photo" type="url" placeholder="https://...">
+              <span class="help">এখানে একটি অনলাইন ছবির লিংক দিতে পা
