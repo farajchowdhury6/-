@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সেই ছোটবেলা</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf1;
+      color: #34352e;
+    }
+    header {
+      background: #285943;
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 8px; font-size: 30px; }
+    header p { margin: 0; line-height: 1.7; }
+    nav {
+      background: #e8efdf;
+      padding: 13px 8px;
+      text-align: center;
+    }
+    nav a {
+      color: #285943;
+      text-decoration: none;
+      margin: 0 8px;
+      font-weight: bold;
+    }
+    main { max-width: 700px; margin: auto; padding: 20px 15px; }
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 16px 0;
+      box-shadow: 0 3px 12px #0000000d;
+    }
+    .card h2 { color: #285943; margin-top: 0; }
+    .memory {
+      background: #fff0cf;
+      border-left: 5px solid #d99b38;
+      padding: 15px;
+      border-radius: 8px;
+      line-height: 1.8;
+    }
+    button {
+      background: #285943;
+      color: white;
+      border: 0;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #666;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌿 সেই ছোটবেলা</h1>
+    <p>যে দিনগুলো ফিরে আসে না,<br>
+    সেই দিনগুলোই এখানে বেঁচে থাকে।</p>
+  </header>
+
+  <nav>
+    <a href="#home">হোম</a>
+    <a href="#question">স্মৃতির প্রশ্ন</a>
+    <a href="#memory">স্মৃতির গল্প</a>
+  </nav>
+
+  <main id="home">
+    <section class="card">
+      <h2>❤️ ফিরে দেখি ছোটবেলা</h2>
+      <p>তোমার ছোটবেলার গল্প, খেলার স্মৃতি,
+      স্কুলের দিন আর বন্ধুদের কথা এখানে
+      একসঙ্গে জমা হোক।</p>
+    </section>
+
+    <section class="card" id="question">
+      <h2>💭 আজকের স্মৃতির প্রশ্ন</h2>
+      <p>ছোটবেলায় তোমার সবচেয়ে প্রিয় খেলাটি কী ছিল?</p>
+      <p>বন্ধুদের সঙ্গে সেই খেলার কোনো মজার স্মৃতি মনে আছে?</p>
+      <button onclick="alert('খুব শিগগিরই তোমার স্মৃতি শেয়ার করার ব্যবস্থা আসছে!')">
+        স্মৃতি শেয়ার করো
+      </button>
+    </section>
+
+    <section class="card" id="memory">
+      <h2>📖 ছোটবেলার এক টুকরো স্মৃতি</h2>
+      <div class="memory">
+        বিকেল হলেই বন্ধুদের সঙ্গে মাঠে ছুটে যাওয়া,
+        লুকোচুরি আর গোল্লাছুট খেলা।
+        সূর্য ডুবে গেলেও বাড়ি ফিরতে মন চাইত না।
+        আহা, সেই দিনগুলো!
+      </div>
+      <p>এটি একটি নমুনা স্মৃতি।</p>
+    </section>
+  </main>
+
+  <footer>
+    তোমার স্মৃতি, আমার স্মৃতি, আমাদের ছোটবেলা। ❤️
+    <br>© সেই ছোটবেলা
+  </footer>
+</body>
+</html>
